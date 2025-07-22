@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Storefront</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #cartPanel {
+      display: none;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    .cart-item {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+
+    #controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <center><h1>ECOMMERCE SITE</h1></center>
+
+  <div id="controls">
+    <input type="text" id="search" placeholder="Search...">
+
+    <select id="categoryFilter">
+      <option value="">All Categories</option>
+      <option value="clothes">Clothes</option>
+      <option value="shoes">Shoes</option>
+      <option value="electronics">Electronics</option>
+      <option value="makeup">Makeup</option>
+      <option value="groceries">Groceries</option>
+      <option value="bags">Bags</option>
+    </select>
+
+    <button onclick="toggleCart()" id="showCartBtn">🛒 Show Cart</button>
+  </div>
+
+  <!-- Cart Panel -->
+  <div id="cartPanel">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <h3 id="total">Total: ₹0</h3>
+    <button onclick="checkout()">Checkout</button>
+  </div>
+
+  <div id="products" class="product-container"></div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
